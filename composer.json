@@ -1,0 +1,13 @@
+{
+    "name": "networkteam/tika",
+    "type": "typo3-flow-package",
+    "description": "Simple wrapper for the Apache Tika metadata extractor – http://tika.apache.org",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Networkteam\\Tika": "Classes"
+        }
+    }
+}
