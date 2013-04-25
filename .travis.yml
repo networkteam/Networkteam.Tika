@@ -15,7 +15,7 @@ before_script:
             "bin-dir": "bin"
         },
         "require": {
-            "flowpack/singlesignon-client": "dev-${TRAVIS_BRANCH}#${TRAVIS_COMMIT}"
+            "networkteam/tika": "dev-${TRAVIS_BRANCH}#${TRAVIS_COMMIT}"
         },
         "require-dev": {
             "typo3/buildessentials": "dev-master",
