@@ -5,6 +5,7 @@ php:
 
 before_script:
   - mkdir Build; cd Build
+  # Test this
   - |
     cat << 'EOF' > composer.json
         {
