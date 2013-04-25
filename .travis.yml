@@ -7,8 +7,8 @@ before_script:
   - mkdir Build; cd Build
   # Test this
   - |
-    cat << 'EOF' > composer.json
-        {
+    cat <<EOF > composer.json
+    {
         "name": "typo3/flow-base-distribution",
         "config": {
             "vendor-dir": "Packages/Libraries",
