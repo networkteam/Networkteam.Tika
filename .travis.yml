@@ -29,5 +29,17 @@ before_script:
     }
     EOF
   - composer update --dev
+  # We need to override the default Routes because they reference the non-existing Welcome package
+  - |
+    cat <<EOF > Configuration/Routes.yaml
+    -
+      name: 'Flow'
+      uriPattern: '<FlowSubroutes>'
+      defaults:
+        '@format': 'html'
+      subRoutes:
+        FlowSubroutes:
+          package: TYPO3.Flow
+    EOF
 
 script: phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Application/Networkteam.Tika/Tests/Functional
