@@ -2,6 +2,11 @@ language: php
 
 php:
   - 5.3
+  - 5.4
+
+env:
+  - FLOW_VERSION=2.0.*
+  - FLOW_VERSION=dev-master
 
 before_script:
   - mkdir Build; cd Build
@@ -28,6 +33,8 @@ before_script:
         }
     }
     EOF
+  # Install Flow in different versions
+  - composer require typo3/flow:${FLOW_VERSION} --no-update
   - composer update --dev
   # We need to override the default Routes because they reference the non-existing Welcome package
   - |
