@@ -9,6 +9,7 @@ env:
   - FLOW_VERSION=dev-master
 
 before_script:
+  - env
   - mkdir Build; cd Build
   # Test this
   - |
@@ -20,7 +21,7 @@ before_script:
             "bin-dir": "bin"
         },
         "require": {
-            "networkteam/tika": "dev-${TRAVIS_BRANCH}#${TRAVIS_COMMIT}"
+            "networkteam/tika": "dev-master#${TRAVIS_COMMIT}"
         },
         "require-dev": {
             "typo3/buildessentials": "dev-master",
