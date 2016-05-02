@@ -24,12 +24,6 @@ class TikaService {
 	protected $packageManager;
 
 	/**
-	 * @Flow\Inject
-	 * @var \TYPO3\Flow\Resource\ResourceManager
-	 */
-	protected $resourceManager;
-
-	/**
 	 * @var string
 	 */
 	protected $javaCommand;
