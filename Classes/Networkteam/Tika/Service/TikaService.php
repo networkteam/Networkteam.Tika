@@ -72,7 +72,7 @@ class TikaService {
 	 * @throws \Networkteam\Tika\Exception
 	 */
 	protected function execute(Resource $resource, $option) {
-		$pathAndFilename = $this->resourceManager->getPersistentResourcesStorageBaseUri() . $resource->getResourcePointer();
+		$pathAndFilename = $resource->createTemporaryLocalCopy();
 		$command = sprintf('%s -jar %s --%s %s', $this->javaCommand, $this->tikaPathAndFilename, $option, $pathAndFilename);
 		$output = array();
 		exec($command, $output, $result);
@@ -85,6 +85,9 @@ class TikaService {
 			}
 			$exceptionMessage .= PHP_EOL . PHP_EOL . 'The erroneous command was:' . PHP_EOL . $command;
 			throw new Exception($exceptionMessage, 1363701105);
+		}
+		if (file_exists($pathAndFilename)) {
+			@unlink($pathAndFilename);
 		}
 		return implode(PHP_EOL, $output);
 	}
