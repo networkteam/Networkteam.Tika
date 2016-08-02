@@ -1,7 +1,7 @@
 Networkteam.Tika
 ================
 
-A simple wrapper to use [Apache Tika](http://tika.apache.org/) inside TYPO3 Flow applications:
+A simple wrapper to use [Apache Tika](http://tika.apache.org/) inside Flow Framework applications:
 
 - Detect the language of variouse resources
 - Detect the content type of a resource
