@@ -2,9 +2,12 @@
     "name": "networkteam/tika",
     "type": "typo3-flow-package",
     "description": "Simple wrapper for the Apache Tika metadata extractor – http://tika.apache.org",
-	"keywords": ["Flow", "Tika"],
-	"license": "MIT",
-	"authors": [
+    "keywords": [
+        "Flow",
+        "Tika"
+    ],
+    "license": "MIT",
+    "authors": [
         {
             "name": "Christopher Hlubek",
             "email": "hlubek@networkteam.com"
@@ -13,13 +16,18 @@
             "name": "Bastian Waidelich",
             "email": "b.waidelich@wwwision.de"
         }
-	],
+    ],
     "require": {
-       "typo3/flow": ">=2.0"
+        "typo3/flow": ">=2.0"
     },
     "autoload": {
         "psr-0": {
             "Networkteam\\Tika": "Classes"
         }
+    },
+    "extra": {
+        "applied-flow-migrations": [
+            "TYPO3.FLOW3-201201261636"
+        ]
     }
 }
