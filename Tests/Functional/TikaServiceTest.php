@@ -18,8 +18,8 @@ class TikaServiceTest extends FunctionalTestCase {
 	public function getContentTypeForResourceExtractsContentType() {
 		/** @var \Networkteam\Tika\Service\TikaService $service */
 		$service = $this->objectManager->get('Networkteam\Tika\Service\TikaService');
-		/** @var \TYPO3\Flow\Resource\ResourceManager $resourceManager */
-		$resourceManager = $this->objectManager->get('TYPO3\Flow\Resource\ResourceManager');
+		/** @var \TYPO3\Flow\ResourceManagement\ResourceManager $resourceManager */
+		$resourceManager = $this->objectManager->get('TYPO3\Flow\ResourceManagement\ResourceManager');
 
 		$resource = $resourceManager->importResource(__DIR__ . '/Fixtures/document.pdf');
 		$this->assertNotEquals(FALSE, $resource, 'Imported resource should not be false');
