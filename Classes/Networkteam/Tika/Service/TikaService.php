@@ -55,7 +55,7 @@ class TikaService {
 			$this->tikaPathAndFilename = $this->settings['tikaPathAndFilename'];
 		} else {
 			$packageResourcesPath = $this->packageManager->getPackage('Networkteam.Tika')->getResourcesPath();
-			$this->tikaPathAndFilename = \Neos\Flow\Utility\Files::concatenatePaths(array($packageResourcesPath, 'Private/Jar/tika-app.jar'));
+			$this->tikaPathAndFilename = \Neos\Utility\Files::concatenatePaths(array($packageResourcesPath, 'Private/Jar/tika-app.jar'));
 		}
 	}
 
