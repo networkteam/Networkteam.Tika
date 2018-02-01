@@ -9,7 +9,7 @@ namespace Networkteam\Tika;
 /**
  * Tika base exception
  */
-class Exception extends \TYPO3\Flow\Exception {
+class Exception extends \Neos\Flow\Exception {
 }
 
 ?>

@@ -7,8 +7,8 @@ namespace Networkteam\Tika\Service;
  *                                                                                 */
 
 use Networkteam\Tika\Exception;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\ResourceManagement\PersistentResource;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\ResourceManagement\PersistentResource;
 
 /**
  * Tika Service. See http://tika.apache.org/1.3/gettingstarted.html#Using_Tika_as_a_command_line_utility
@@ -19,7 +19,7 @@ class TikaService {
 
 	/**
 	 * @Flow\Inject
-	 * @var \TYPO3\Flow\Package\PackageManagerInterface
+	 * @var \Neos\Flow\Package\PackageManagerInterface
 	 */
 	protected $packageManager;
 
@@ -55,12 +55,12 @@ class TikaService {
 			$this->tikaPathAndFilename = $this->settings['tikaPathAndFilename'];
 		} else {
 			$packageResourcesPath = $this->packageManager->getPackage('Networkteam.Tika')->getResourcesPath();
-			$this->tikaPathAndFilename = \TYPO3\Flow\Utility\Files::concatenatePaths(array($packageResourcesPath, 'Private/Jar/tika-app.jar'));
+			$this->tikaPathAndFilename = \Neos\Flow\Utility\Files::concatenatePaths(array($packageResourcesPath, 'Private/Jar/tika-app.jar'));
 		}
 	}
 
 	/**
-	 * @param \TYPO3\Flow\ResourceManagement\PersistentResource $resource
+	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @param string $option
 	 * @return string
 	 * @throws \Networkteam\Tika\Exception
@@ -87,7 +87,7 @@ class TikaService {
 	}
 
 	/**
-	 * @param \TYPO3\Flow\ResourceManagement\PersistentResource $resource
+	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
 	public function getText(Resource $resource) {
@@ -95,7 +95,7 @@ class TikaService {
 	}
 
 	/**
-	 * @param \TYPO3\Flow\ResourceManagement\PersistentResource $resource
+	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
 	public function getTextMain(Resource $resource) {
@@ -103,7 +103,7 @@ class TikaService {
 	}
 
 	/**
-	 * @param \TYPO3\Flow\ResourceManagement\PersistentResource $resource
+	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
 	public function getLanguage(Resource $resource) {
@@ -111,7 +111,7 @@ class TikaService {
 	}
 
 	/**
-	 * @param \TYPO3\Flow\ResourceManagement\PersistentResource $resource
+	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
 	public function getContentType(Resource $resource) {
@@ -119,7 +119,7 @@ class TikaService {
 	}
 
 	/**
-	 * @param \TYPO3\Flow\ResourceManagement\PersistentResource $resource
+	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
 	public function getXhtml(Resource $resource) {
@@ -127,7 +127,7 @@ class TikaService {
 	}
 
 	/**
-	 * @param \TYPO3\Flow\ResourceManagement\PersistentResource $resource
+	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
 	public function getHtml(Resource $resource) {
@@ -135,7 +135,7 @@ class TikaService {
 	}
 
 	/**
-	 * @param \TYPO3\Flow\ResourceManagement\PersistentResource $resource
+	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return array
 	 */
 	public function getMetadata(Resource $resource) {
