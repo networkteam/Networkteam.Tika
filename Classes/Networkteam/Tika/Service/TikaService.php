@@ -2,7 +2,7 @@
 namespace Networkteam\Tika\Service;
 
 /*                                                                                 *
- * This script belongs to the TYPO3 Flow package "Networkteam.Tika".               *
+ * This script belongs to the Neos Flow package "Networkteam.Tika".               *
  *                                                                                 *
  *                                                                                 */
 
@@ -65,8 +65,8 @@ class TikaService {
 	 * @return string
 	 * @throws \Networkteam\Tika\Exception
 	 */
-	protected function execute(Resource $resource, $option) {
-		// this only works for local stores 
+	protected function execute(PersistentResource $resource, $option) {
+		// this only works for local stores
 		$streamMetaData = stream_get_meta_data($resource->getStream());
 		$pathAndFilename = $streamMetaData['uri'];
 		$command = sprintf('%s -jar %s --%s %s', $this->javaCommand, $this->tikaPathAndFilename, $option, $pathAndFilename);
@@ -90,7 +90,7 @@ class TikaService {
 	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
-	public function getText(Resource $resource) {
+	public function getText(PersistentResource $resource) {
 		return $this->execute($resource, 'text');
 	}
 
@@ -98,7 +98,7 @@ class TikaService {
 	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
-	public function getTextMain(Resource $resource) {
+	public function getTextMain(PersistentResource $resource) {
 		return $this->execute($resource, 'text-main');
 	}
 
@@ -106,7 +106,7 @@ class TikaService {
 	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
-	public function getLanguage(Resource $resource) {
+	public function getLanguage(PersistentResource $resource) {
 		return $this->execute($resource, 'language');
 	}
 
@@ -114,7 +114,7 @@ class TikaService {
 	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
-	public function getContentType(Resource $resource) {
+	public function getContentType(PersistentResource $resource) {
 		return $this->execute($resource, 'detect');
 	}
 
@@ -122,7 +122,7 @@ class TikaService {
 	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
-	public function getXhtml(Resource $resource) {
+	public function getXhtml(PersistentResource $resource) {
 		return $this->execute($resource, 'xml');
 	}
 
@@ -130,7 +130,7 @@ class TikaService {
 	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return string
 	 */
-	public function getHtml(Resource $resource) {
+	public function getHtml(PersistentResource $resource) {
 		return $this->execute($resource, 'html');
 	}
 
@@ -138,10 +138,8 @@ class TikaService {
 	 * @param \Neos\Flow\ResourceManagement\PersistentResource $resource
 	 * @return array
 	 */
-	public function getMetadata(Resource $resource) {
+	public function getMetadata(PersistentResource $resource) {
 		$metadataString = $this->execute($resource, 'json');
 		return json_decode($metadataString, TRUE);
 	}
 }
-
-?>
