@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Networkteam\\Tika": "Classes"
+            "Networkteam\\Tika\\": "Classes"
         }
     },
     "extra": {
