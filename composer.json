@@ -1,6 +1,6 @@
 {
     "name": "networkteam/tika",
-    "type": "typo3-flow-package",
+    "type": "neos-package",
     "description": "Simple wrapper for the Apache Tika metadata extractor – http://tika.apache.org",
     "keywords": [
         "Flow",
@@ -18,11 +18,11 @@
         }
     ],
     "require": {
-        "typo3/flow": ">=2.0"
+        "neos/flow": "~7.0"
     },
     "autoload": {
-        "psr-0": {
-            "Networkteam\\Tika": "Classes"
+        "psr-4": {
+            "Networkteam\\Tika\\": "Classes"
         }
     },
     "extra": {

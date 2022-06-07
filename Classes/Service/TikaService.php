@@ -1,11 +1,6 @@
 <?php
 namespace Networkteam\Tika\Service;
 
-/*                                                                                 *
- * This script belongs to the Neos Flow package "Networkteam.Tika".               *
- *                                                                                 *
- *                                                                                 */
-
 use Networkteam\Tika\Exception;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\ResourceManagement\PersistentResource;
@@ -19,7 +14,7 @@ class TikaService {
 
 	/**
 	 * @Flow\Inject
-	 * @var \Neos\Flow\Package\PackageManagerInterface
+	 * @var \Neos\Flow\Package\PackageManager
 	 */
 	protected $packageManager;
 

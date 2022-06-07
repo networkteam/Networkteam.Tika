@@ -30,4 +30,3 @@ class TikaServiceTest extends FunctionalTestCase {
 	}
 
 }
-?>
